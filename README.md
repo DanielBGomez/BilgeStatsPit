@@ -7,6 +7,7 @@ This app let you know the stats of every champion played while the Black Market 
  
 ###Live Url
 You can see this project live now in
+
 http://danielbgomez.com/bilgestatspit/
 
 Project details in plain language at the "About" section.
