@@ -98,6 +98,7 @@ To avoid the repeatedly request of the same information at making the design of 
 
 Upon completion of that section, we continue with the "**Best Champions**" section by requesting the same information but ordered by the '**winrate**' ( **'sum (wins) * 100 / $ allgames'** ) also limited by 10. Then with the **Summary Table** that contain the same information requested above but this time for each existing champion, adding the most picked **Summoner Spells** and **items**.
 
+And with all the information stored that way, the other sections took much less time to request information.
 
 ### Summoner Spells and Items query
 To get the most popular items and Summoner Spells, create four more tables in the database:
@@ -114,6 +115,7 @@ id, name, reference
 SpellCount - With a record of the times that SummonerSpells (By ID) were used for each champion.
 spellid, championId, count
 ```
+As in the general data, the items and Summoner Spells were stored in **6** and **2** sections respectively, we had to save for each section the ammount in the database and add it the values for each other section where the ids match.
 
 
 ###Technologies used
