@@ -1,5 +1,5 @@
 ##BilgeStatsPit - Riot Games API Challenge 2.0 Entry
-######by Daniel BGomez (LAN: DanielGomez)
+######by Daniel BGomez (LAN: DanielGomez) & Natalia (LAN: Natyy9923)
 
 This app let you know the stats of every champion played while the Black Market Brawlers Games; Champions, items and summoner spells popularity; Multi Kills, etc.
  
