@@ -1,6 +1,16 @@
 <?php 
-require('core/database.php');
 require('core/configuration.php');
+
+class Database {
+	function Database(){
+		//This class is here to avoid problems with the core class
+	}
+	function __destruct(){unset($this);}
+	
+	function get_result_from_query(){}
+	function execute_single_query(){}
+	function execute_returning_id(){}
+}
 
 class Core extends Database {
 	function Core(){
