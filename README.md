@@ -11,8 +11,8 @@ http://www.danielbgomez.com/bilgestatspit/
 
 Project details in plain language at the "About" section.
 
-###How I got the Data?
-Since I wanted to get information from most of the games offered in the contest, and doing calculations individually using only the API would make it very slow and clumsy, I used a local database where mainly kept the id of the games (**10,000** per region = **100,000** in total) and with an algorithm I began to get the information of each match 1-1, keeping the game information in a table where stored the information required for each game participant (Champions in this case ), it also updated the status of the games in the database to prevent duplicate values.
+###How we got the Data?
+Since we wanted to get information from most of the games offered in the contest, and doing calculations individually using only the API would make it very slow and clumsy, we used a local database where mainly kept the id of the games (**10,000** per region = **100,000** in total) and with an algorithm we began to get the information of each match 1-1, keeping the game information in a table where stored the information required for each game participant (Champions in this case ), it also updated the status of the games in the database to prevent duplicate values.
 
 ####Data Stored: 
 ######(The raw data isn't at the files)
@@ -85,7 +85,7 @@ Participants:
 * totalTimeCrowdControlDealt
 ```
 
-As I could not store the information of the 100,000 games that worked 1 game per second, I stopped the process at **54.947 games**, resulting **549.470** times that a champion was played.
+As we could not store the information of the 100,000 games that worked 1 game per second, we stopped the process at **54.947 games**, resulting **549.470** times that a champion was played.
 
 Once all the information was saved, we began to apply the processed information.
 First we start with the "**Popular Champions**" ( **Most Picked** ) section on the home page, by requesting the information:
