@@ -120,3 +120,5 @@ As in the general data, the items and Summoner Spells were stored in **6** and *
 
 ###Technologies used
 The core of the application is write in **PHP OOP** language; to print information it's **html** and **css** as if a simple website concerned, and **jQuery** for dynamic interactions.
+
+We also used the jQuery script **[Tablesorter](http://tablesorter.com/docs/)**.
