@@ -1,74 +1,53 @@
-<style type="text/css">
-	body{background-image: url(images/back1.jpg);background-repeat: no-repeat;background-attachment: fixed;background-color: #151716;background-size: 100%;margin:0px auto;text-align: center;font-family: sans-serif;color:#eee;text-shadow:1px 1px #777;}
-	big {font-weight: bold;}
-	small {opacity: 0.7;}
-	a 		{color:rgba(255,180,150,0.9);text-decoration: none;}
-	a:hover {color:rgba(255,180,150,0.4);text-decoration: none;}
-	#page  {width: 1200px;margin:0px auto;text-align: center;display: inline-block;}
-	#header {width: 100%;margin: 0px 0px 20px;}
-	#navegation {display:inline-block;background-color: rgba(0,0,0,0.9);box-shadow: 0px 0px 40px rgba(20,20,20,0.9);width: 100%;margin:70px 0px 10px;padding:0px;}
-	#navegation td {padding:25px 30px;font-size: 21px;font-weight: bold;}
-	#navegation a {color:#eee;}
-	#navegation a:hover {opacity:0.7;text-decoration: none}
-	#logo {position: absolute;margin-top:-105px;margin-left: 20px}
-	#footer {width: 1140px;margin: 10px auto 20px;font-size: 14px;padding: 20px 30px;background-color: rgba(0,0,0,0.3);}
+<?php
+if(!isset($core)){
+	header('Location: ../');
+}
 
+$useragent=$_SERVER['HTTP_USER_AGENT'];
+if(preg_match('/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i',$useragent)||preg_match('/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i',substr($useragent,0,4))){
+	if(!isset($_COOKIE['mobile'])){ ?>
+		<script type="text/javascript">
+			alert("This page consumes a lot of data due to the large amount of images and data showing.\nIf you are visiting us from a mobile, we recommend not to use a network of metered usage.");
+		</script>
+		<?php
+		$expire=time()+3600;
+		setcookie('mobile', 'true', $expire);
+	}
+}
+
+
+?>
+
+<style type="text/css">
 	#right {width:800px;float:right;display: inline-block;}
 	#left  {width:370px;float:left;display: inline-block;}
-	#left .home-section p {
+	#left .section p {
 		margin: 0px;
 		color:#ccc !important;
 		background-color: rgba(50,50,50,0.2);
 		padding: 5px 25px;
 		font-size: 14px;
 	}
-	.home-section {background-color: rgba(0,0,0,0.9);box-shadow: 0px 0px 40px rgba(20,20,20,0.9);width: 100%;margin:10px 0px 20px;}
-	.home-section h1 {padding:18px 0px;font-size: 18px;width: 100%;margin: 0px;}
-	.home-section h1[href] {cursor: pointer;}
-	.featured {width: 100%;margin: 0px;}
-	.home-section[popular] .featured {height: 370px;}
-	.home-section[best] .featured 	 {height: 370px;}
+	.section[popular] .featured {height: 370px;}
+	.section[best] .featured 	 {height: 370px;}
 	.featured-champ { cursor: pointer;margin:0px;height: 370px;overflow: hidden;}
-	.featured img {max-width: 100%;margin: 0px;margin-top:-20px;}
+	.featured img {max-width: 100%;width:800px;margin: 0px;margin-top:-20px;}
 	.others {font-family: serif;text-align: left;width:100%;margin:0px;padding:0px;}
 	.others img {cursor: pointer;border-style: solid;border-width: 4px;border-color: rgba(0,0,0,0.9);margin-right: -4px;margin-bottom:-4px;width: 72px;}
 	.others[items] img {width: 53px;}
 	.others img:hover {border-color: rgba(50,50,50,0.7);}
-	.inner-info {background-color: rgba(0,0,0,0.7 );position: absolute;padding: 10px 40px;display: inline-block;font-size: 13px;}
-	.inner-info p {margin:8px;padding: 0px;line-height: 18px;	}
-	.inner-info table {text-align: left;margin: 0px;padding: 0px;line-height: 12px;}
 	.featured-champ .name {width: 740px;padding: 0px 30px;margin-top: 280px;position: absolute;text-align: right;font-size: 20px;	}
 </style>
-<script type="text/javascript">
-	$(document).ready(function(){
-		$("[href]").click(function(){
-			$url=$(this).attr('href');
-			window.location.href=$url;	
-		});
-	});
-</script>
-<div id="page">
 
-<div id="header">
-	<table id="navegation">
-		<tr>
-			<td width="110px"><a href="<?php echo $core->conf->http_url; ?>"><img id="logo" src="images/logo.png" height="150px" ></td>
-			<td><a href="<?php echo $core->conf->http_url; ?>">Home</a></td>
-			<td><a href="<?php echo $core->conf->http_url; ?>?/champions">Champions</a></td>
-			<td><a href="<?php echo $core->conf->http_url; ?>?/items">Items</a></td>
-			<td><a href="<?php echo $core->conf->http_url; ?>?/about">About</a></td>
-		</tr>
-	</table>
-</div>
 
 <div id="left">
-	<div class="home-section">
+	<div class="section">
 		<h1>Bilge Stats Pit</h1>
 		<p style="padding-bottom:5px;height:253px;">
-			<img src="images/logo.png" width="250px" >
+			<img src="<?php echo $core->conf->http_url;?>images/logo.png" width="250px" >
 		</p>
 		<p style="text-align: justify;padding-bottom:10px">
-			This page let you know the Stats of <a href="?/champions">every Champion</a> played while the Black Market Brawlers Games; Popularity of <a href="?/champions/popularity">Champions</a>, <a href="?/items/popularity">Items</a> and <a href="#">Summoner Spells</a>; a very big table of <a href="#Summary">Summary Data</a> and the <a href="?/about">Full Documentation</a> of how this App works. 
+			This page let you know the Stats of <a href="?/champions">every Champion</a> played while the Black Market Brawlers Games; Popularity of <a href="?/champions/summary/pickrate">Champions</a>, Items and Summoner Spells; a very big table of <a href="?/champions/summary">Summary Data</a> and the <a href="https://github.com/DanielBGomez/BilgeStatsPit/blob/master/README.md" target="_BLANK">Full Documentation</a> of how this App works. 
 		</p>
 		<p style="padding-bottom:25px">
 			<small style="opacity:0.5"><b><a href="http://na.leagueoflegends.com/en/news/community/contests/riot-games-api-challenge-20" target="_BLANK">LEAGUE OF LEGENDS API CHALLENGE 2.0 ENTRY</a></b></small>
@@ -87,7 +66,7 @@
 		}
 		#general-data tr {margin:0px auto 0px 20px;width: 245px;display: inline-block;text-align: left}
 	</style>
-	<div class="home-section">
+	<div class="section">
 		<h1>General Data</h1>
 		<p style="padding:25px 0px 10px"><big>Matchs Data:</big></p>
 		<p><small>Matchs Analized</small><br><b>54,947</b><br></p>
@@ -110,7 +89,7 @@
 
 
 
-	<div class="home-section">
+	<div class="section">
 		<h1>Advertisement</h1>
 		<p style="padding: 17px 0px !important">
 			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -129,11 +108,11 @@
 
 
 <div id="right">
-	<div class="home-section" popular>
-		<h1 href="?/champions/popularity">Popular Champions</h1>
+	<div class="section" popular>
+		<h1 href="?/champions/summary/pickrate">Most Picked Champions</h1>
 		<div class="featured">
 			<?php foreach($home->popularchamps as $k => $champ){ ?>
-				<div href="?/champion/<?php echo $champ['keyname'];?>" class="featured-champ" <?php if($k!='0'){echo 'style="display:none;"';} echo "ref=\"$k\""; ?>>
+				<div href="?/champions/<?php echo $champ['keyname'];?>" class="featured-champ" <?php if($k!='0'){echo 'style="display:none;"';} echo "ref=\"$k\""; ?>>
 					<div class="inner-info" style="margin-left:25px;margin-top:15px">
 						<p>
 							Overall Pick Rate<br>
@@ -175,11 +154,11 @@
 		</div>
 		<script type="text/javascript">
 			$(document).ready(function(){
-				$(".home-section[popular] img[opopular]").click(function(){
+				$(".section[popular] img[opopular]").click(function(){
 					$ref = $(this).attr('ref');
-					$(".home-section[popular] .featured-champ[ref!='"+$ref+"']").fadeOut(200);
+					$(".section[popular] .featured-champ[ref!='"+$ref+"']").fadeOut(200);
 					setTimeout(function(){
-						$(".home-section[popular] .featured-champ[ref='"+$ref+"']").fadeIn(200);
+						$(".section[popular] .featured-champ[ref='"+$ref+"']").fadeIn(200);
 					},210);
 				});
 			});
@@ -189,11 +168,11 @@
 
 
 
-	<div class="home-section" best>
-		<h1>Best Champions</h1>
+	<div class="section" best>
+		<h1 href="?/champions/summary/winrate">Best Champions</h1>
 		<div class="featured">
 			<?php foreach($home->bestchamps as $k => $champ){ ?>
-				<div href="?/champion/<?php echo $champ['keyname'];?>" class="featured-champ" <?php if($k!='0'){echo 'style="display:none;"';} echo "ref=\"$k\""; ?>>
+				<div href="?/champions/<?php echo $champ['keyname'];?>" class="featured-champ" <?php if($k!='0'){echo 'style="display:none;"';} echo "ref=\"$k\""; ?>>
 					<div class="inner-info" style="margin-left:25px;margin-top:15px">
 						<p>
 							Overall Pick Rate<br>
@@ -235,11 +214,11 @@
 		</div>
 		<script type="text/javascript">
 			$(document).ready(function(){
-				$(".home-section[best] img[obest]").click(function(){
+				$(".section[best] img[obest]").click(function(){
 					$ref = $(this).attr('ref');
-					$(".home-section[best] .featured-champ[ref!='"+$ref+"']").fadeOut(200);
+					$(".section[best] .featured-champ[ref!='"+$ref+"']").fadeOut(200);
 					setTimeout(function(){
-						$(".home-section[best] .featured-champ[ref='"+$ref+"']").fadeIn(200);
+						$(".section[best] .featured-champ[ref='"+$ref+"']").fadeIn(200);
 					},210);
 				});
 			});
@@ -275,13 +254,13 @@
 		}
 	</style>
 
-	<div class="home-section" items>
-		<h1 href="?/items/popularity">Popular Items</h1>
+	<div class="section" items>
+		<h1>Most Picked Items</h1>
 		<div class="others" items>
 			<?php foreach($home->popularitems as $k => $item){ ?>
 				<img item src="<?php echo $core->getFile($core->conf->url_version.'img/item/'.$item['id'].'.png','item'); ?>" <?php echo "ref=\"$k\""; ?> >
 			<?php } foreach($home->popularitems as $k => $item){ ?>
-				<table href="?/items/<?php echo $item['id'];?>" class="featured-item" <?php echo 'style="display:none;" ' . " ref=\"$k\""; ?> >
+				<table class="featured-item" <?php echo 'style="display:none;" ' . " ref=\"$k\""; ?> >
 					<tr>
 						<td width="88px">
 							<img src="<?php echo $core->getFile($core->conf->url_version.'img/item/'.$item['id'].'.png','item'); ?>" <?php echo "ref=\"$k\""; ?> >
@@ -304,14 +283,14 @@
 			$(document).ready(function(){
 				$(".featured-item:first").slideDown();
 
-				$(".home-section[items] img[item]").click(function(){
+				$(".section[items] img[item]").click(function(){
 					$ref = $(this).attr('ref');
-					$h = $(".home-section[items] .others").height()+'px';
-					$(".home-section[items] .others").css('height',$h);
-					$(".home-section[items] .featured-item[ref!='"+$ref+"']").fadeOut(200);
+					$h = $(".section[items] .others").height()+'px';
+					$(".section[items] .others").css('height',$h);
+					$(".section[items] .featured-item[ref!='"+$ref+"']").fadeOut(200);
 					setTimeout(function(){
-						$(".home-section[items] .featured-item[ref='"+$ref+"']").fadeIn(200);
-						$(".home-section[items] .others").css('height','auto');
+						$(".section[items] .featured-item[ref='"+$ref+"']").fadeIn(200);
+						$(".section[items] .others").css('height','auto');
 					},210);
 				});
 			});
@@ -335,28 +314,28 @@
 	#home-summary img[borded] {border:rgba(20,20,20,0.7) 5px solid;width:40px;}
 </style>
 
-<div class="home-section" style="width:1200px;float:left;" id="Summary">
-	<h1>Summary</h1>
+<div class="section" style="width:1200px;float:left;" id="Summary">
+	<h1 href="?/champions/summary">Summary</h1>
 	<table id="home-summary" class="tablesorter">
 		<thead>
 			<tr class="table-title">
 				<th width="50px"></th>
-				<th sort width="160px" class="headerSortDown">Name</th>
-				<th width="90px">Pick Rate</th>
-				<th sort width="90px">Win Rate</th>
-				<th colspan="2" style="font-size:11px">Popular Spells</th>
-				<th sort>KDA</th>
-				<th sort width="45px" style="font-size:11px">Kills</th>
-				<th sort width="45px" style="font-size:11px">Deaths</th>
-				<th width="45px" style="font-size:11px">Assists</th>
-				<th width="55px" style="font-size:11px">Minions</th>
-				<th width="65px" style="font-size:11px">Gold</th>
-				<th colspan="6">Popular Items</th>
+				<th href="<?php echo $core->conf->http_url.'?/champions/summary/keyname'; ?>" width="160px" class="headerSortDown">Name</th>
+				<th href="<?php echo $core->conf->http_url.'?/champions/summary/pickrate'; ?>"  width="90px">Pick Rate</th>
+				<th href="<?php echo $core->conf->http_url.'?/champions/summary/winrate'; ?>"  width="90px">Win Rate</th>
+				<th colspan="2" style="font-size:11px">Most Picked Spells</th>
+				<th href="<?php echo $core->conf->http_url.'?/champions/summary/kda'; ?>">KDA</th>
+				<th href="<?php echo $core->conf->http_url.'?/champions/summary/averageKills'; ?>"  width="45px" style="font-size:11px">Kills</th>
+				<th href="<?php echo $core->conf->http_url.'?/champions/summary/averageDeaths'; ?>"  width="45px" style="font-size:11px">Deaths</th>
+				<th href="<?php echo $core->conf->http_url.'?/champions/summary/averageAssists'; ?>"  width="45px" style="font-size:11px">Assists</th>
+				<th href="<?php echo $core->conf->http_url.'?/champions/summary/averageMinions'; ?>"  width="55px" style="font-size:11px">Minions</th>
+				<th href="<?php echo $core->conf->http_url.'?/champions/summary/averageGold'; ?>"  width="65px" style="font-size:11px">>Gold</th>
+				<th colspan="6">Most Picked Items</th>
 			</tr>
 		</thead>
 		<tbody>
 			<?php foreach ($home->summary as $champ) { ?>
-				<tr  href="?/champion/<?php echo $champ['keyname'];?>">
+				<tr  href="?/champions/<?php echo $champ['keyname'];?>">
 					<td><img src="<?php echo $core->getFile($core->conf->url_version.'img/champion/'.$champ['keyname'].'.png','champion/square'); ?>" ></td>
 					<td class="table-name"><?php echo $champ['fullname']; ?></td>
 					<td <?php if(isset($champ['pickrate'])) { echo 'style="color:'.$core->getPercentColor($champ['pickrate'],$home->generaldata['averagePickrate']).'">'.$champ['pickrate'].'%<br><small style="font-size:11px">( '.number_format($champ['games']).' Games )</small>'; } else echo '>???<br><small style="font-size:11px">( ??? Games )</small>'; ?></td>
@@ -440,7 +419,4 @@
 			window.location.href=$href;
 		});
 	</script -->
-</div>
-
-
 </div>

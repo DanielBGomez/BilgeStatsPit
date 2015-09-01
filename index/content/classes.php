@@ -1,4 +1,8 @@
 <?php
+if(!isset($core)){
+	header('Location: ../');
+}
+
 class Home{
 	function Home($core){
 		//$this->popularchamps = $core->getBilgeChamps('','count(championId)','10');

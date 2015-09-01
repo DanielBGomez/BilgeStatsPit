@@ -1,7 +1,7 @@
 # Do not remove this line or mod_rewrite rules and search engine friendly URLs will stop working
 
 RewriteBase /
-errorDocument 404 /404
+errorDocument 404 /bilgestatspit/
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)$ $1.php

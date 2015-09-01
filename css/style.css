@@ -1,0 +1,19 @@
+	body{background-image: url(../images/back1.jpg);background-repeat: no-repeat;background-attachment: fixed;background-color: #151716;background-size: 100%;margin:0px auto;text-align: center;font-family: sans-serif;color:#eee;text-shadow:1px 1px #777;}
+	big {font-weight: bold;}
+	small {opacity: 0.7;}
+	a 		{color:rgba(255,180,150,0.9);text-decoration: none;}
+	a:hover {color:rgba(255,180,150,0.4);text-decoration: none;}
+	#page  {width: 1200px;margin:0px auto;text-align: center;display: inline-block;}
+	#header {width: 100%;margin: 0px 0px 20px;}
+	#navegation {display:inline-block;background-color: rgba(0,0,0,0.9);box-shadow: 0px 0px 40px rgba(20,20,20,0.9);width: 100%;margin:70px 0px 10px;padding:0px;}
+	#navegation td {padding:25px 30px;font-size: 21px;font-weight: bold;}
+	#navegation a {color:#eee;}
+	#navegation a:hover {opacity:0.7;text-decoration: none}
+	#logo {position: absolute;margin-top:-105px;margin-left: 20px}
+	#footer {width: 1140px;margin: 10px auto 20px;font-size: 14px;padding: 20px 30px;background-color: rgba(0,0,0,0.3);}
+	.section {background-color: rgba(0,0,0,0.9);box-shadow: 0px 0px 40px rgba(20,20,20,0.9);width: 100%;margin:10px 0px 20px;}
+	.section h1 {padding:18px 0px;font-size: 18px;width: 100%;margin: 0px;}
+	.section h1[href] {cursor: pointer;}
+	.inner-info {background-color: rgba(0,0,0,0.7 );position: absolute;padding: 10px 40px;display: inline-block;font-size: 13px;}
+	.inner-info p {margin:8px;padding: 0px;line-height: 18px;	}
+	.inner-info table {text-align: left;margin: 0px;padding: 0px;line-height: 12px;}
